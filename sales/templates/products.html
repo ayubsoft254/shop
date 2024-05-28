@@ -1,20 +1,21 @@
-{%extends 'base.html'%}
-{%block main%}
-    <h1>products list</h1>  
-    <table class="table  table-hover">
-        <thead>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Stock</th>
-        </thead>
-        <tbody>
-            {% for product in products%}
-            <tr>
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-                <td>{{product.stock}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>    
+{% extends 'base.html' %}
+{% block main %}
+    <h1>Products List</h1>  
+    <div class="row">
+        {% for product in products %}
+        <div class="col-4 p-1">
+            <div class="card" style="width: 18rem;">
+                <img src="https://www.instok.co.ke/image/cache/products/c9b0178a0389755fe9b1b3e207d766b7-600x600.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">KES {{ product.price }}</p>
+                    <p class="card-text">Quantity Available: {{ product.in_stock }}</p>
+                    {% if product.in_stock %}
+                    <a href="#" class="btn btn-primary">Order</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>            
+        {% endfor %}
+    </div>
 {% endblock %}

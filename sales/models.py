@@ -9,10 +9,28 @@ class Product(models.Model):
     def __str__(self):
         return f'{self.name} ({self.price})' 
        
-class Customer(models.Model):
+class Customer(models.Model):    
     name = models.CharField(max_length=20)
     email = models.EmailField()
     phone = models.CharField(max_length=12)
 
     def __str__(self):
-        return f'{self.name} ({self.email})'
+        return f'{self.name}'
+    
+class Order(models.Model):    
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    order_date = models.DateField()       
+    paid = models.BooleanField(default=False)
+    delivered = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.customer} | {self.order_date}'
+    
+class OrderDetail(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField()
+    amount = models.DecimalField(decimal_places=2, max_digits=9)
+
+    def __str__(self):
+        return f'{self.order}|{self.product}|{self.quantity}'
