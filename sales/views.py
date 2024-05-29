@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from sales.models import Product, Customer, Order, OrderDetail
 
+
 # Create your views here.
-def site_home(request):
+def site_home(request):    
     return render(request, 'index.html')
 
 def products_list(request):

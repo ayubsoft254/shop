@@ -1,0 +1,25 @@
+{%extends 'base.html'%} {% block main %}
+<div class="p-5 border rounded m-3">
+<form action="login" method="POST">
+    {% csrf_token %}
+    <p>{{error_message}}</p>
+    <div class="m-3">
+        <h2>Login to Access U-shop</h2>
+    </div>
+  <div class="row mb-3">
+    <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+    <div class="col-sm-10">
+      <input type="username" class="form-control" id="inputUsername" name = "inputUsername">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" name="inputPassword">
+    </div>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+</div>
+{% endblock %}

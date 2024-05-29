@@ -39,8 +39,13 @@
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        <button class="btn btn-outline-success" type="submit">Search</button>        
+        {% if user.is_authenticated%}
+        <p> {{user.first_name}} </p>
+        {% else %}
+        <a href="login_page" class=" btn btn-success">Login</a>
+        {% endif %}
+      </form>      
     </div>
   </div>
   
