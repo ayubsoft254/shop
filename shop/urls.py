@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from sales.views import site_home, products_list, customers, orders, order_details
-from accounts.views import login_page, signin
+from accounts.views import login_page, signin, register_page, register
 
 
 urlpatterns = [
@@ -29,5 +29,7 @@ urlpatterns = [
     path('order_details/<int:order_id>', order_details, name='order_details'),
 
     path('login_page', login_page, name='login_page'),
-    path('login', signin, name='login')
+    path('login', signin, name='login'),
+    path('register_page', register_page, name='register_page'),
+    path('register', register, name='register')
 ]

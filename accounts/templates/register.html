@@ -1,0 +1,26 @@
+{%extends 'base.html' %}
+{% block main%}
+<div class="border rounded p-3 m-2">
+    <form action="register" method="POST" class="form-control">
+        {%csrf_token%}        
+        <h2>Register to Access U-shop</h2>
+        <label for="username">Username:</label>
+        <input type="text" name="inputUsername" id="inputUsername" required value="{{username}}"><br/>
+        <label for="password">Password:</label>
+        <input type="password" name="inputPassword1" id="inputPassword1" required><br/>
+        <label for="password">Confirm Password:</label>
+        <input type="password" name="inputPassword2" id="inputPassword2" required><br/>
+        <label for="firstname">First Name:</label>
+        <input type="text" name="inputFirstname" id="inputFirstname" required value="{{first_name}}"><br/>
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="inputLastname" id="inputLastname" required value="{{last_name}}"><br/>
+        <label for="phone">Phone:</label>
+        <input type="phone" name="inputPhone" id="inputPhone" required value="{{phone}}"><br/>
+        <label for="email">Email:</label>
+        <input type="email" name="inputEmail" id="inputEmail" required value="{{email}}"><br/>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <p>{{error_message}}</p>
+</div>
+{%endblock%}
