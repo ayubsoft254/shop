@@ -114,6 +114,9 @@ USE_I18N = True
 
 USE_TZ = True
 
+LOGIN_URL = 'login'  # URL pattern name for your login view
+LOGIN_REDIRECT_URL = 'site_home'  # URL pattern name to redirect to after login
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/

@@ -1,21 +1,26 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from sales.models import Product, Customer, Order, OrderDetail
 
 
 # Create your views here.
+@login_required
 def site_home(request):    
     return render(request, 'index.html')
 
+@login_required
 def products_list(request):
     products = Product.objects.all()
     context = {'products':products}    
     return render(request, 'products.html', context)
 
+@login_required
 def customers(request):
     customers = Customer.objects.all()
     context = {'customers': customers}
     return render(request, 'customers.html', context)
 
+@login_required
 def orders(request, customer_id):
 
     current_customer = Customer.objects.get(id=customer_id)
@@ -27,6 +32,7 @@ def orders(request, customer_id):
     context.update({'customer': current_customer})
     return render(request, 'orders.html', context)
 
+@login_required
 def order_details(request, order_id):
     selected_order = Order.objects.get(id=order_id)
     order_details = OrderDetail.objects.filter(order=selected_order)
