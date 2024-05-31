@@ -73,7 +73,3 @@ def register(request):
     customer.save()
 
     return render(request, 'login.html', context)
-
-    
-
-         
