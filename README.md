@@ -1,1 +1,1 @@
-Learning Django
+Django class - project ushop
