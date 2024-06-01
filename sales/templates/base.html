@@ -42,7 +42,7 @@
         <button class="btn btn-outline-success" type="submit">Search</button>        
         <div class="d-flex" m1>
         {% if user.is_authenticated%}
-        <form method="post" action="{% url 'logout' %}">
+        <form method="post" action="{}">
           {% csrf_token %}
           <button type="submit">Logout</button>
       </form>
