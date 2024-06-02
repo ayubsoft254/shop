@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>lap</h1>
+<div class="container">
+    <h1>laptop details</h1>
+    <h1>{{ laptop.brand }} {{ laptop.model }}</h1>
+    <p>Processor Family: {{ laptop.processor_family }}</p>
+    <p>Processor Details: {{ laptop.processor_details }}</p>
+    <p>Graphics: {{ laptop.graphics }}</p>
+    <p>RAM: {{ laptop.ram }}</p>
+    <p>Storage: {{ laptop.storage }}</p>
+    <p>Internal Drive: {{ laptop.internal_drive }}</p>
+    <p>Display Size: {{ laptop.display_size }}</p>
+    <p>Display Details: {{ laptop.display_details }}</p>
+    <p>Security Software License: {{ laptop.security_software_license }}</p>
+    <p>Ports: {{ laptop.ports }}</p>
+    <p>Expansion Slots: {{ laptop.expansion_slots }}</p>
+    <p>Audio Features: {{ laptop.audio_features }}</p>
+    <p>Webcam: {{ laptop.webcam_details }}</p>
+    <p>Keyboard: {{ laptop.keyboard_features }}</p>
+    <p>Pointing Device: {{ laptop.pointing_device }}</p>
+    <p>Wi-Fi: {{ laptop.wifi }}</p>
+    <p>Bluetooth: {{ laptop.bluetooth }}</p>
+    <p>WWAN: {{ laptop.wwan }}</p>
+    <p>Power Supply: {{ laptop.power_supply }}</p>
+    <p>Battery: {{ laptop.battery }}</p>
+    <p>Color: {{ laptop.color }}</p>
+    <p>Energy Efficiency: {{ laptop.energy_efficiency }}</p>
+    <p>Dimensions: {{ laptop.dimensions }}</p>
+    <p>Weight: {{ laptop.weight }}</p>
+    <p>Warranty: {{ laptop.warranty }}</p>
+    <p>Support Service: {{ laptop.support_service }}</p>
+    <p>Software Included: {{ laptop.software_included }}</p>
+    <p>Manageability Features: {{ laptop.manageability_features }}</p>
+    <p>Security Management: {{ laptop.security_management }}</p>
+    <p>Sustainable Impact: {{ laptop.sustainable_impact }}</p>
+    <p>Release Date: {{ laptop.release_date }}</p>
+    <p>{{ laptop.description }}</p>
+</div>
+{% endblock %}

@@ -19,6 +19,7 @@ from django.urls import path
 from sales.views import site_home, products_list, customers, orders, order_details
 from accounts.views import login_page, signin, register_page, register
 from django.contrib.auth import views as auth_views
+from laptops.views import laptop_detail, laptop_list
 
 
 urlpatterns = [
@@ -33,4 +34,7 @@ urlpatterns = [
     path('login', signin, name='login'),
     path('register_page', register_page, name='register_page'),
     path('register', register, name='register'),
+    path('laptop_list', laptop_list, name='laptop_list'),    
+    path('laptops/<int:laptop_id>', laptop_detail, name='laptop_detail'),
+    
 ]

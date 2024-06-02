@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block main %}
+    <h1>Laptops List</h1>  
+    <div class="row">
+        {% for laptop in laptops %}
+        <div class="col-4 p-1">
+            <div class="card" style="width: 18rem;">
+                <img src="https://www.instok.co.ke/image/cache/products/c9b0178a0389755fe9b1b3e207d766b7-600x600.jpg" class="card-img-top" alt="{{ laptop.model }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ laptop.brand }} {{ laptop.model }}</h5>
+                    <p class="card-text">Processor: {{ laptop.processor_family }}</p>
+                    <p class="card-text">RAM: {{ laptop.ram }}</p>
+                    <p class="card-text">Storage: {{ laptop.storage }}</p>
+                    <p class="card-text">Display: {{ laptop.display_size }}</p>
+                    <a href="{% url 'laptop_detail' laptop.id %}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>            
+        {% endfor %}
+    </div>
+{% endblock %}
+
