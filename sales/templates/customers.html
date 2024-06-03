@@ -1,20 +1,21 @@
-{%extends 'base.html'%}
-{%block main%}
-    <h1>customers</h1>
-    <table class="table  table-hover">
-        <thead>
-            <th>Name</th>
-            <th>phone</th>
-            <th>Email</th>
-        </thead>
-        <tbody>
-            {% for customer in customers%}
-            <tr>
-                <td>{{customer.first_name}}</td>
-                <td>{{customer.email}}</td>
-                <td>{{customer.phone}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+{% extends 'base.html' %}
+{% block main %}
+    <h1>Customer List</h1>  
+    <div class="row">
+        {% for customer in customers %}
+        <div class="col-4 p-1">
+            <div class="card" style="width: 18rem;">
+                <img src="{{customer.image.url}}" width="100%" />
+                <div class="card-body">
+                    <h5 class="card-title">Name: {{ customer.first_name }}</h5>
+                    <p class="card-text"> Email: {{customer.email}}</p>
+                    <p class="card-text">phone: {{customer.phone}}</p>
+                    {% if product.in_stock %}
+                    <a href="#" class="btn btn-primary">Order</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>            
+        {% endfor %}
+    </div>
 {% endblock %}

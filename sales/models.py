@@ -18,6 +18,7 @@ class Customer(models.Model):
     phone = models.CharField(max_length=12)    
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     password = models.CharField(max_length=20)
+    image = models.ImageField(upload_to='media/images')
     
 
     def __str__(self):
