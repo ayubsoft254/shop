@@ -5,7 +5,7 @@
         {% for product in products %}
         <div class="col-4 p-1">
             <div class="card" style="width: 18rem;">
-                <img src="https://www.instok.co.ke/image/cache/products/c9b0178a0389755fe9b1b3e207d766b7-600x600.jpg" class="card-img-top" alt="...">
+                <img src="{{product.image.url}}" width="100%" />
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">KES {{ product.price }}</p>

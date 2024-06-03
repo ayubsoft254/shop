@@ -20,7 +20,8 @@ from sales.views import site_home, products_list, customers, orders, order_detai
 from accounts.views import login_page, signin, register_page, register
 from django.contrib.auth import views as auth_views
 from laptops.views import laptop_detail, laptop_list
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,3 +39,5 @@ urlpatterns = [
     path('laptops/<int:laptop_id>', laptop_detail, name='laptop_detail'),
     
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

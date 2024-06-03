@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sales',
     'accounts',
-    'laptops'
+    'laptops',    
 ]
 
 MIDDLEWARE = [
@@ -123,7 +123,13 @@ LOGOUT_REDIRECT_URL = '/'  # Redirect to homepage or any other page after logout
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
